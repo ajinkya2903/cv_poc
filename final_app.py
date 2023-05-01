@@ -22,8 +22,7 @@ st.write(
 
 class Predict:
     def __init__(self):
-        modelPath = '/app/cv_poc'
-        # open(modelPath/'model.pkl','rb')
+        modelPath = Path(__file__).parents[1]
         self.learn_inference = load_learner(modelPath, '/model.pkl')
         # self.learn_inference = load_learner(Path()/filename)
         self.img = self.get_image_from_upload()
