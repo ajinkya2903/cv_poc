@@ -19,8 +19,8 @@ st.write(
 )
 
 class Predict:
-    def __init__(self, filename):
-        self.learn_inference = load_learner(filename)
+    def __init__(self):
+        self.learn_inference = load_learner("model.pkl")
         self.img = self.get_image_from_upload()
         if self.img is not None:
             self.display_output()
@@ -51,7 +51,7 @@ class Predict:
 
 if __name__=='__main__':
 
-    file_name='model.pkl'
+    # file_name='model.pkl'
 
     predictor = Predict(file_name)
 
