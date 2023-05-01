@@ -9,7 +9,8 @@ import pathlib
 
 plt = 'Windows'
 if plt == 'Windows': 
-    pathlib.PosixPath = pathlib.WindowsPath
+    # pathlib.PosixPath = pathlib.WindowsPath
+    pathlib.WindowsPath = pathlib.PosixPath
 
 st.set_page_config(layout="wide", page_title="Your Dog Classifier")
 
