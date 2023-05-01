@@ -22,6 +22,7 @@ st.write(
 
 class Predict:
     def __init__(self, filename):
+        print(Path.cwd())
         self.learn_inference = load_learner(Path()/filename)
         self.img = self.get_image_from_upload()
         if self.img is not None:
