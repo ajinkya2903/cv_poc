@@ -21,9 +21,11 @@ st.write(
 )
 
 class Predict:
-    def __init__(self, filename):
-        print(Path.cwd())
-        self.learn_inference = load_learner(Path()/filename)
+    def __init__(self):
+        modelPath = Path('/app/cv_poc')
+        # open(modelPath/'model.pkl','rb')
+        self.learn_inference = load_learner(open(modelPath/'model.pkl','rb'))
+        # self.learn_inference = load_learner(Path()/filename)
         self.img = self.get_image_from_upload()
         if self.img is not None:
             self.display_output()
@@ -56,5 +58,6 @@ if __name__=='__main__':
 
     file_name='model.pkl'
 
-    predictor = Predict(file_name)
+    # predictor = Predict(file_name)
+    predictor = Predict()
 
