@@ -22,7 +22,7 @@ st.write(
 
 class Predict:
     def __init__(self):
-        modelPath = Path('/app/cv_poc')
+        modelPath = '/app/cv_poc'
         # open(modelPath/'model.pkl','rb')
         self.learn_inference = load_learner(modelPath, '/model.pkl')
         # self.learn_inference = load_learner(Path()/filename)
