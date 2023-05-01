@@ -9,8 +9,7 @@ import pathlib
 
 plt = 'Windows'
 if plt == 'Windows': 
-    # pathlib.PosixPath = pathlib.WindowsPath
-    pathlib.WindowsPath = pathlib.PosixPath
+    pathlib.PosixPath = pathlib.WindowsPath
 
 st.set_page_config(layout="wide", page_title="Your Dog Classifier")
 
@@ -21,7 +20,7 @@ st.write(
 
 class Predict:
     def __init__(self, filename):
-        self.learn_inference = load_learner(Path()/filename)
+        self.learn_inference = load_learner(filename)
         self.img = self.get_image_from_upload()
         if self.img is not None:
             self.display_output()
