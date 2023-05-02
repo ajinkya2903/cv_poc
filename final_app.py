@@ -7,11 +7,8 @@ import streamlit as st
 
 import pathlib
 
-plt = 'Windows'
-if plt == 'Windows': 
-    pathlib.PosixPath = pathlib.WindowsPath
-
-path = "/app/cv_poc/"
+temp = pathlib.PosixPath
+pathlib.PosixPath = pathlib.WindowsPath
 
 st.set_page_config(layout="wide", page_title="Your Dog Classifier")
 
@@ -22,8 +19,7 @@ st.write(
 
 class Predict:
     def __init__(self):
-        modelPath = Path(__file__).parents[1]
-        self.learn_inference = load_learner(modelPath, '/model.pkl')
+        self.learn_inference = load_learner('/model.pkl')
         # self.learn_inference = load_learner(Path()/filename)
         self.img = self.get_image_from_upload()
         if self.img is not None:
